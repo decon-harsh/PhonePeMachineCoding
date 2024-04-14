@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "f60d480e-da17-4fc3-bfc2-6302e273e1bf",
+		"name": "PhonePe Machine Coding",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11573487"
+	},
+	"item": [
+		{
+			"name": "getAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/215",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"215"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"UserCustomFirst\",\r\n    \"lastName\" : \"UserCustomLast\",\r\n    \"email\" : \"UserCustomEmail@gmail.com\",\r\n    \"password\" : \"PassCustom\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 6, \r\n    \"password\" : \"PassCustom\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"search\": [\r\n        {\r\n            \"key\": \"firstName\",\r\n            \"value\": \"UserFirst1\",\r\n            \"operator\": \"EQ\"\r\n        }, \r\n        {\r\n            \"key\": \"lastName\",\r\n            \"value\": \"UserLast1\",\r\n            \"operator\": \"EQ\"   \r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Doc",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\" : \"My content\",\r\n    \"token\" : \"176ee731-4bc6-4b4f-91f4-26c0c37f89c3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/documents/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"documents",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Doc Copy",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\" : \"My content latest\",\r\n    \"token\" : \"a53bf333-3727-4010-8100-7e69104b9a91\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/documents/1?token=a53bf333-3727-4010-8100-7e69104b9a91",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"documents",
+						"1"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "a53bf333-3727-4010-8100-7e69104b9a91"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get For User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/documents?token=a53bf333-3727-4010-8100-7e69104b9a91",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"documents"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "a53bf333-3727-4010-8100-7e69104b9a91"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/documents?token=176ee731-4bc6-4b4f-91f4-26c0c37f89c3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"documents"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "176ee731-4bc6-4b4f-91f4-26c0c37f89c3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
